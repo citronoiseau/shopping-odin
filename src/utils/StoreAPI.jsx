@@ -6,8 +6,9 @@ const StoreAPI = () =>  {
     useEffect(() => {
     fetch('https://fakestoreapi.com/products')
     .then(response => response.json())
-    .then(data => console.log(data));
-    })
+    .then(data => setData(data));
+    }, [])
+    return data;
 }
 
 export default StoreAPI;
