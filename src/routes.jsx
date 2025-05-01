@@ -7,14 +7,16 @@ import CartPage from "./pages/CartPage";
 const routes = [
   {
     path: "/",
-    element: <App />, 
+    element: <App />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <HomePage /> }, 
-      { path: "shop", element: <ShopPage /> }, 
+      { index: true, element: <HomePage /> },
+      {
+        path: "shop/:filter", 
+        element: <ShopPage />,
+      },
       { path: "cart", element: <CartPage /> },
     ],
   },
 ];
-
 export default routes;
