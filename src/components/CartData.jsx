@@ -20,6 +20,10 @@ export function CartProvider({ children }) {
     }
   };
 
+  const deleteItem = (id) => {
+    setItems(items.filter(item => item.id !== id));
+  };
+
   const increaseAmount = (id) => {
     setItems(items.map(item =>
       item.id === id
