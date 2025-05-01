@@ -1,14 +1,15 @@
 import './App.css';
-import { NavBar } from './components/NavBar';
 import { Outlet } from 'react-router-dom'; 
+import StoreAPI from "./utils/StoreAPI";
+import NavBar from './components/NavBar';
 
 function App() {
+  const shopItems = StoreAPI();
 
   return (
     <>
-      <h1>Hello World</h1>
       <NavBar />
-      <Outlet />
+      <Outlet context={{ shopItems }} /> 
     </>
   )
 }
