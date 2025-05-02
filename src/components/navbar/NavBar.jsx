@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom"; 
-import SearchBar from "../SearchBar";
+import SearchBar from "../searchbar/SearchBar";
 import styles from "./NavBar.module.css";
 import { useState } from "react";
-
+import { useCart } from "../CartData";
 const NavBar = () => {
+  const { items } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -12,26 +13,36 @@ const NavBar = () => {
 
   return (
     <nav className={styles.navbar}>
-      <div className={styles.burger} onClick={toggleMenu}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+      <button className={styles.burger} onClick={toggleMenu}>
+        <img src="/icons/burger.svg" alt="small burger menu"/>
+      </button>
 
       <div className={`${styles.main} ${isMenuOpen ? styles.active : ""}`}>
-      <span className={styles.closeBtn} onClick={toggleMenu}>X</span>
-         <NavLink to="/" end>Zazza</NavLink>
-         <NavLink to="/shop/women" end>Women</NavLink>
-         <NavLink to="/shop/men" end>Men</NavLink>
-         <NavLink to="/shop/jewelery" end>Jewelery</NavLink>
+      <button className={styles.closeBtn} onClick={toggleMenu}>
+      <img src="/icons/close.svg" alt="close button"/>
+        </button>
+        <NavLink to="/" end className={`${styles.navLink} ${styles.logo}`}>
+            ZAZZA
+          </NavLink>
+          <NavLink to="/shop/women" end className={styles.navLink}>WOMEN</NavLink>
+          <NavLink to="/shop/men" end className={styles.navLink}>MEN</NavLink>
+          <NavLink to="/shop/jewelery" end className={styles.navLink}>JEWELERY</NavLink>
       </div>
 
+      <div className={styles.smallLogo}>
+        <NavLink to="/" end className={styles.navLink}>ZAZZA</NavLink>
+      </div>
 
       <div className={styles.secondary}>
           <SearchBar />
-          <NavLink to="/account" end>Profile</NavLink>
-          <NavLink to="/account/favorites" end>Favorites</NavLink>
-          <NavLink to="/cart">Shopping Cart</NavLink>
+          <NavLink to="/account" end className={styles.navLink}> <img src="/icons/account.svg" alt="profile link"/></NavLink>
+          <NavLink to="/account/favorites" end className={styles.navLink}><img src="/icons/favorites.svg" alt="favorites link"/></NavLink>
+          <NavLink to="/cart" className={styles.navLink}>
+            <div className={styles.cartContainer}> 
+            <span> {items.length}</span>
+              <img src="/icons/cart.svg" alt="shopping cart link"/>
+            </div>
+          </NavLink>
         </div>
     </nav>
   );
