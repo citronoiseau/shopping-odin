@@ -1,0 +1,35 @@
+.searchContainer {
+    position: relative;
+    max-width: 300px;
+    min-width: 90px;
+  }
+  
+  .searchBar {
+    width: 100%;
+    padding: 12px 40px 12px 16px; 
+    border: none;
+    border-radius: 25px;
+    border-bottom: 1px solid #ccc; 
+    font-size: 16px; 
+    outline: none;
+    transition: all 0.3s ease; 
+  }
+  
+  .searchBar:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .imgContainer {
+    position: absolute;
+    right: 10px;
+    top: 55%;
+    transform: translateY(-50%); 
+  }
+  
+  .searchBar::placeholder {
+    color: #aaa; 
+  }
+  
+  .searchBar:focus::placeholder {
+    color: transparent;
+  }

@@ -1,5 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import styles from "./SearchBar.module.css";
+
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
@@ -11,14 +13,14 @@ const SearchBar = () => {
   };
     
   return (
-      <form onSubmit={handleSearch}>
-        <input 
+      <form className={styles.searchContainer} onSubmit={handleSearch}>
+        <input className={styles.searchBar} 
           type="text" 
           value={search} 
           onChange={(e) => setSearch(e.target.value)} 
-          placeholder="Search products..."
+          placeholder="What are you looking for?"
         />
-        <button type="submit">Search</button>
+        <div className={styles.imgContainer}> <img src="/icons/search.svg" alt="search-icon"/></div>
       </form>
  )
 };
