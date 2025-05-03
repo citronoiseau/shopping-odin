@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useCart } from "../../utils/CartData";
 const NavBar = () => {
   const { items } = useCart();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -39,7 +40,10 @@ const NavBar = () => {
           <NavLink to="/account/favorites" end className={styles.navLink}><img src="/icons/favorites.svg" alt="favorites link"/></NavLink>
           <NavLink to="/cart" className={styles.navLink}>
             <div className={styles.cartContainer}> 
-            <span> {items.length}</span>
+              {items.length > 0 && 
+              (<span> {items.reduce((total, item) => total + item.amount, 0)}
+              </span>)}
+  
               <img src="/icons/cart.svg" alt="shopping cart link"/>
             </div>
           </NavLink>

@@ -84,7 +84,9 @@
   .cartContainer span {
     position:absolute;
     right:0;
-    background-color: white;
+    background-color: rgb(255, 0, 0);
+    color:white;
+    padding: 1px 3px;
     bottom: 0;
     border-radius: 25px;
   }
