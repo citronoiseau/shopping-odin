@@ -1,0 +1,17 @@
+.shopContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 30px;
+    align-items: center;
+}
+.shopContainer h2 {
+    text-transform:uppercase;
+}
+.itemsContainer {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
