@@ -18,13 +18,20 @@
     margin: 0 12px;
     font-weight: 500;
     font-size: 16px;
-    transition: border-bottom 0.3s ease;
-    border-bottom: 2px solid transparent; 
+    color: black;
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+    background-image: linear-gradient(#ff0000, #ff0000);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
   }
   
   .navLink:hover {
-    color: #000;
-    border-bottom: 2px solid #000; 
+    background-size: 100% 1px;
   }
   
   .main {
@@ -43,11 +50,26 @@
   .secondary img, .burger img {
     min-width: 16px;
     min-height: 16px;
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
     object-fit: contain;
   }
 
+  .closeBtn,
+  .burger {
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .closeBtn:hover,
+  .burger:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+  }
   .burger {
     display: none;
     flex-direction: column;

@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import SearchBar from "../searchbar/SearchBar";
 import styles from "./NavBar.module.css";
 import { useState } from "react";
-import { useCart } from "../CartData";
+import { useCart } from "../../utils/CartData";
 const NavBar = () => {
   const { items } = useCart();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +22,7 @@ const NavBar = () => {
       <img src="/icons/close.svg" alt="close button"/>
         </button>
         <NavLink to="/" end className={`${styles.navLink} ${styles.logo}`}>
-            ZAZZA
+            SAZZA
           </NavLink>
           <NavLink to="/shop/women" end className={styles.navLink}>WOMEN</NavLink>
           <NavLink to="/shop/men" end className={styles.navLink}>MEN</NavLink>
@@ -30,7 +30,7 @@ const NavBar = () => {
       </div>
 
       <div className={styles.smallLogo}>
-        <NavLink to="/" end className={styles.navLink}>ZAZZA</NavLink>
+        <NavLink to="/" end className={styles.navLink}>S</NavLink>
       </div>
 
       <div className={styles.secondary}>
