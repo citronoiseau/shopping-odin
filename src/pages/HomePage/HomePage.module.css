@@ -1,8 +1,17 @@
-.landingContainer {
+.homepageContainer {
+  padding-top:60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.landingContainer, .newCollection {
     height: clamp(300px, 70vh, 700px);
     display: flex; 
     flex-direction: column;
-    padding-top:60px;
+    align-items: center;
+    width: 100%;
   }
   
   .photoContainer {
@@ -29,6 +38,56 @@
   }
   
   .photoAttribution {
-    margin-top: 10px; 
     align-self: center;
   }
+
+  .photoAttribution a, .infoContainer a {
+    font-weight: 400;
+    color: black;
+    text-decoration: none;
+    padding-bottom: 2px;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+    background-image: linear-gradient(#ff0000, #ff0000);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease;
+  }
+  
+  .photoAttribution a:hover, .infoContainer a:hover {
+    background-size: 100% 1px;
+  }
+
+  .infoContainer, .trendingContainer {
+    display: flex;
+    padding-top: 40px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .infoContainer h2, .trendingContainer h2, .newCollection h2 {
+    font-size: 2rem;
+  }
+  .infoContainer a {
+    color: red;
+    font-weight: 800;
+    font-size: 1.5rem;
+  }
+
+  .trendingContainer  {
+    padding-top: 20px;
+    gap: 20px;
+  }
+  .trendingItems {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.newCollection span{
+  right: 20%;
+  top: 20%;
+}
