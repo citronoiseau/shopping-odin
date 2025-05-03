@@ -9,11 +9,12 @@ const SearchBar = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
+    setSearch("");
     navigate(`/shop/${search}`);  
   };
     
   return (
-      <form className={styles.searchContainer} onSubmit={handleSearch}>
+      <form className={styles.searchContainer} onSubmit={handleSearch} id="searchForm">
         <input className={styles.searchBar} 
           type="text" 
           value={search} 
